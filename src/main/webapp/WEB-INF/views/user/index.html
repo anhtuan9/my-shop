@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>My Shop</title>
+</head>
+<body>
+<h1>Wecome</h1>
+<form th:action="@{/login}" method="post">
+    <button value="login" name="login" id="login" type="submit">login</button>
+</form>
+<table border="1">
+    <tr>
+        <th>First name</th>
+        <th>Price</th>
+        <th>comment</th>
+        <th>producer</th>
+    </tr>
+    <th:block th:each="product : ${products}">
+        <tr>
+            <td th:text="${product.name}"></td>
+            <td th:text="${product.price}"></td>
+            <td th:text="${product.cmt}"></td>
+            <td th:text="${product.producer}"></td>
+        </tr>
+    </th:block>
+</table>
+</body>
+</html>
